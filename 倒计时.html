@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				text-decoration: none;
+			}
+			#numDiv{
+				font-size: 26px;
+			}
+			#wrap{
+				width:200px;
+				height: 50px;
+				margin-top: 25px;
+			}
+			#btn-zan{
+				width: 50px;
+				height: 50px;
+				background:sandybrown;
+				line-height: 50px;
+				text-align: center;
+				float: left;
+				cursor: pointer;
+			}
+			#btn-hui{
+				width: 50px;
+				height: 50px;
+				background:yellowgreen;
+				line-height: 50px;
+				text-align: center;
+				float: left;
+				margin-left: 15px;
+				cursor: pointer;
+			}
+			#btn-jie{
+				width: 50px;
+				height: 50px;
+				background:palevioletred;
+				line-height: 50px;
+				text-align: center;
+				float: left;
+				margin-left: 15px;
+				cursor: pointer;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id='numDiv'>00:00:15</div>
+		<div id="wrap">
+			<div id="btn-zan">暂停</div>
+			<div id="btn-hui">恢复</div>
+			<div id="btn-jie">结束</div>
+		</div>
+		
+	<script type="text/javascript">
+		
+		var num=15;
+		var interval=setInterval(function(){
+			if(num==0){
+				clearInterval(interval);
+			}
+			numDiv.innerHTML="00:00:"+num--;
+		},1000);
+		
+		var btn1=document.getElementById("btn-zan");
+		var btn2=document.getElementById("btn-hui");
+		var btn3=document.getElementById("btn-jie");
+		btn1.onclick=function(){
+			clearInterval(interval);
+		}
+		btn2.onclick=function(){
+			interval=setInterval(function(){
+			if(num==0){
+				clearInterval(interval);
+			}
+			numDiv.innerHTML="00:00:"+num--;
+		},1000);
+		}
+		btn3.onclick=function(){
+			clearInterval(interval);
+		}
+		
+	</script>   
+
+		
+	</body>
+</html>
